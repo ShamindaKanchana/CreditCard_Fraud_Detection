@@ -10,6 +10,17 @@ The dataset used in this project contains anonymized transaction details with a 
 
 
 
+## Key Insights from the Dataset
+
+1. **Transaction Type Distribution**:
+   - According to the dataset, **99.4% of transactions are withdrawals**, while the remaining **0.6%** represent other types of transactions.
+   - This highlights that the majority of the activity in the dataset involves customers withdrawing money.
+
+2. **Transaction Amount Distribution**:
+   - A significant number of transactions have an amount **less than $100**.
+   - This indicates that most customers are engaged in smaller transactions, which might impact the patterns for fraudulent vs. non-fraudulent behaviors.
+
+
 ### 1. Preprocessing
 The preprocessing steps include:
 - Checking for missing values
