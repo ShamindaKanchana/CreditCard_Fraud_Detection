@@ -70,3 +70,50 @@ For this credit card fraud detection task, I have chosen to use the **Random For
    - Random Forest provides insight into the importance of each feature in making predictions. This is valuable when trying to understand which features play a significant role in detecting fraudulent transactions.
 
 
+
+## 4.Train and predict using the model 
+
+### Using Random Forest Classifier
+
+
+
+#### I. **Training with Entire Dataset (Unbalanced Data)**
+
+- **Accuracy:** 99%
+- **Observation:**  
+  This high accuracy is misleading due to the dataset's imbalance. Since the dataset is skewed towards non-fraud transactions, the model predicts the majority class (non-fraud transactions) more accurately but fails to generalize for minority class instances (fraud cases).
+
+
+#### II. **Training with Balanced Dataset, Predicting on Unbalanced Dataset**
+
+- **Accuracy:** 97%
+- **Observation:**  
+  When the model is trained on a balanced dataset and tested on an unbalanced dataset, the accuracy decreases. However, this setup improves the model's ability to correctly identify fraud cases, which is the primary goal in fraud detection.
+
+
+
+#### III. **Training with Balanced Dataset, Predicting on Balanced Dataset**
+
+- **Accuracy:** 95%
+- **Observation:**  
+  The accuracy further decreases when both training and prediction are performed using balanced datasets. This is because the balanced dataset does not represent the real-world data distribution, making it less suitable for accurate predictions on real-world datasets.
+
+
+
+#### Conclusion
+
+- **Balanced Data for Training:**  
+  Using a balanced dataset to train the model improves its ability to generalize and detect fraud cases effectively, even if it slightly reduces accuracy compared to training on unbalanced data.
+
+- **Unbalanced Data for Prediction:**  
+  Predicting on unbalanced data is more reflective of real-world performance. While the accuracy decreases slightly, the model is better at identifying minority class instances (fraud cases).
+
+
+
+#### Recommendation
+
+- **Training with a Balanced Dataset:**  
+  Training with a balanced dataset is a good approach for improving the model's fairness and sensitivity to fraud cases.
+
+- **Prediction with Unbalanced Dataset:**  
+  When predicting, using the original unbalanced dataset is more appropriate to evaluate the model's performance in a real-world scenario.
