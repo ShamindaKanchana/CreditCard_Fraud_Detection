@@ -4,6 +4,11 @@ FraudGuard is a machine learning model for detecting fraudulent credit card tran
 ## Dataset
 The dataset used in this project contains anonymized transaction details with a target variable (`1` for fraud, `0` for non-fraud).
 
+
+## Exploratory Data Analysis
+
+
+
 ### Key Insights:
 - **Class Distribution**: The dataset is heavily imbalanced, with a majority of transactions being non-fraudulent.
 - **Null Values**: Checked and handled during preprocessing.
@@ -20,6 +25,44 @@ The dataset used in this project contains anonymized transaction details with a 
    - A significant number of transactions have an amount **less than $100**.
    - This indicates that most customers are engaged in smaller transactions, which might impact the patterns for fraudulent vs. non-fraudulent behaviors.
 
+
+#### Correlation Insights
+
+##### 1. **V1 to V28 Features**
+
+- **Observation:**  
+  There is no significant correlation observed between features `V1` to `V28`. The exact behavior of these features remains unclear, and they don't seem to exhibit a strong relationship with each other.
+
+---
+
+##### 2. **Time Feature**
+
+- **Weak Correlations:**  
+  The `time` feature shows some weak negative correlation with specific features, such as:
+  - **V3**: There is a noticeable negative correlation between `time` and `V3`.
+  - **V11, V25, and V15**: These features show weak negative  correlations with `time` as well.
+
+- **Other Features:**  
+  Other features also display some level of correlation with `time`, though the correlation is not particularly strong.
+
+---
+
+##### 3. **Amount Feature**
+
+- **Negative Correlation with V2:**  
+  The `amount` feature shows a mostly negative correlation with `V2`.
+
+- **Other Features:**  
+  Apart from `V2`, the `amount` feature does not exhibit significant correlation with other features.
+
+---
+
+#### Conclusion
+
+- The analysis indicates weak and inconsistent correlations between the `V1` to `V28` features, and only specific features like `V3` show some meaningful correlation with `time`.
+- The `amount` feature exhibits a negative correlation with `V2` but not with other features.
+
+This correlation analysis can guide further feature engineering or model interpretation steps to understand how these features contribute to the prediction task.
 
 ## 1. Preprocessing
 The preprocessing steps include:
