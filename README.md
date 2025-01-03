@@ -11,6 +11,7 @@ The dataset used in this project contains anonymized transaction details with a 
 
 ### Key Insights:
 - **Class Distribution**: The dataset is heavily imbalanced, with a majority of transactions being non-fraudulent.
+![Piechart](fraud_nofraud_pie.png)
 - **Null Values**: Checked and handled during preprocessing.
 
 
@@ -20,20 +21,23 @@ The dataset used in this project contains anonymized transaction details with a 
 1. **Transaction Type Distribution**:
    - According to the dataset, **99.4% of transactions are withdrawals**, while the remaining **0.6%** represent other types of transactions.
    - This highlights that the majority of the activity in the dataset involves customers withdrawing money.
+![Piechart](withdraws_non_withdraws_percentage.png)
 
 2. **Transaction Amount Distribution**:
    - A significant number of transactions have an amount **less than $100**.
    - This indicates that most customers are engaged in smaller transactions, which might impact the patterns for fraudulent vs. non-fraudulent behaviors.
-
+![Piechart](amount_distribution_pie.png)
 
 #### Correlation Insights
+
+![Heatmap](features_correlation.png)
 
 ##### 1. **V1 to V28 Features**
 
 - **Observation:**  
   There is no significant correlation observed between features `V1` to `V28`. The exact behavior of these features remains unclear, and they don't seem to exhibit a strong relationship with each other.
 
----
+
 
 ##### 2. **Time Feature**
 
@@ -45,7 +49,7 @@ The dataset used in this project contains anonymized transaction details with a 
 - **Other Features:**  
   Other features also display some level of correlation with `time`, though the correlation is not particularly strong.
 
----
+
 
 ##### 3. **Amount Feature**
 
