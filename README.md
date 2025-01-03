@@ -21,7 +21,7 @@ The dataset used in this project contains anonymized transaction details with a 
 1. **Transaction Type Distribution**:
    - According to the dataset, **99.4% of transactions are withdrawals**, while the remaining **0.6%** represent other types of transactions.
    - This highlights that the majority of the activity in the dataset involves customers withdrawing money.
-![Piechart](withdraws_non_withdraws_percentage.png)
+  <img src="withdraws_non_withdraws_percentage.png" alt="Piechart" width="500" height="300">
 
 2. **Transaction Amount Distribution**:
    - A significant number of transactions have an amount **less than $100**.
