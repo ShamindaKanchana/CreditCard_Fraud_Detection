@@ -73,45 +73,52 @@ This correlation analysis can guide further feature engineering or model interpr
 
 #### 4. **Transaction Analysis by Hour (Balanced vs. Unbalanced Dataset)**
 
-1. **Unbalanced Dataset Chart:** Displays the number of transactions (fraud and non-fraud) for each hour in the dataset.
+1. **Unbalanced Dataset Chart:** Displays the number of transactions (fraud and non-fraud) for each elapsed time segment in the dataset.
 2. **Balanced Dataset Chart:** Adjusts for the dataset's imbalance by sampling non-fraud transactions to match the number of fraud transactions.
 
 ##### Visualizations
+
 ###### 1. Unbalanced Dataset
-The first chart visualizes transaction counts for fraud and non-fraud cases across different hours. However, due to the overwhelming number of non-fraud transactions in the dataset, the patterns for fraud cases are less clear.
+
+The first chart visualizes transaction counts for fraud and non-fraud cases across different elapsed time segments. However, due to the overwhelming number of non-fraud transactions in the dataset, the patterns for fraud cases are less clear.
 
 ###### 2. Balanced Dataset
+
 To address this, we created a second chart using a balanced dataset where the number of non-fraud transactions is sampled to equal the number of fraud transactions. This enables a clearer comparison between the two classes.
 
 #### Insights
-- **General Observation:** 
-  - Non-fraud transactions generally occur over a longer duration compared to fraud transactions.
-  - Certain time periods see significant spikes in fraud activity compared to non-fraud.
+
+- **General Observation:**
+
+  - Non-fraud transactions generally occur over a broader range of elapsed times compared to fraud transactions.
+  - Certain time periods show significant spikes in fraud activity compared to non-fraud.
 
 - **Dataset Bias:**
+
   - The original dataset is heavily biased toward non-fraud cases, making it difficult to analyze the behavior of fraud cases directly.
 
 - **Balanced Dataset Observation:**
-  - By balancing the dataset, we observe a clearer trend in how fraud and non-fraud transactions vary over time.
+
+  - By balancing the dataset, we observe a clearer trend in how fraud and non-fraud transactions vary over elapsed time.
   - Patterns derived from this balanced dataset provide more actionable insights into fraud detection.
 
 - **Time-Based Patterns:**
-  - **Less Time for Transactions:** Transactions that take between **2 and 9 hours** are more likely to be fraud cases. However, transactions that take **less than 2 hours** are generally non-fraud cases.
-  - **More Time for Transactions:** Transactions taking **more than 9 hours** are mostly non-fraud cases.
+
+  - **Short Elapsed Time:** Transactions occurring within the first **2 to 9 hours** (based on elapsed time since the first transaction in the dataset) are more likely to be fraud cases. However, transactions occurring in **less than 2 hours** tend to be non-fraud.
+  - **Long Elapsed Time:** Transactions occurring **beyond 9 hours** are predominantly non-fraud cases.
   - **Exceptions:** Time ranges between **21 and 28 hours** deviate from these general patterns, where the behavior of fraud and non-fraud cases varies significantly.
-  - These conclusions are based on the balanced dataset and may not be observable directly in the unbalanced dataset.
+  - These conclusions are based on the balanced dataset and may not be observable directly visualizing  the chrt of  unbalanced dataset.
 
 ### Visualization Example
 Below is the bar chart showing the **Number of Transactions by Hour and Class for the Balanced Dataset**:
 
-![Number of Transactions by Hour and Class](image.png)
+![Number of Transactions by Hour and Class](no_of_transaction_By_H_balanDataset_plot.png)
 
 ### Conclusion
-- Balancing the dataset is crucial for identifying meaningful patterns in skewed data distributions, such as fraud detection.
-- Fraud transactions tend to occur within specific time ranges, such as **2 to 9 hours**, while non-fraud transactions are more distributed over longer durations, typically exceeding **9 hours**.
-- While general patterns are identifiable, exceptions like the time range **21 to 28 hours** highlight the complexity of fraud detection and the importance of contextual analysis.
 
-Balancing the dataset has enabled us to uncover actionable insights that are otherwise obscured by the dominance of non-fraud data in the unbalanced dataset.
+- Balancing the dataset is crucial for identifying meaningful patterns in skewed data distributions, such as fraud detection.
+- Fraud transactions tend to occur within specific elapsed time ranges, such as **2 to 9 hours**, while non-fraud transactions are more distributed over longer elapsed times, typically exceeding **9 hours**.
+- While general patterns are identifiable, exceptions like the time range **21 to 28 hours** highlight the complexity of fraud detection and the importance of contextual analysis.
 
 
 ## 1. Preprocessing
