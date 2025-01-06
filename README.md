@@ -12,7 +12,7 @@ The dataset used in this project contains anonymized transaction details with a 
 ### Key Insights:
 - **Class Distribution**: The dataset is heavily imbalanced, with a majority of transactions being non-fraudulent.
 
-<img src="fraud_nofraud_pie.png" alt="Piechart" width="300" height="300">
+<img src="Visualizations/fraud_nofraud_pie.png" alt="Piechart" width="300" height="300">
 
 - **Null Values**: Checked and handled during preprocessing.
 
@@ -23,17 +23,17 @@ The dataset used in this project contains anonymized transaction details with a 
 1. **Transaction Type Distribution**:
    - According to the dataset, **99.4% of transactions are withdrawals**, while the remaining **0.6%** represent other types of transactions.
    - This highlights that the majority of the activity in the dataset involves customers withdrawing money.
-  <img src="withdraws_non_withdraws_percentage.png" alt="Piechart" width="300" height="300">
+  <img src="Visualizations/withdraws_non_withdraws_percentage.png" alt="Piechart" width="300" height="300">
 
 2. **Transaction Amount Distribution**:
    - A significant number of transactions have an amount **less than $100**.
    - This indicates that most customers are engaged in smaller transactions, which might impact the patterns for fraudulent vs. non-fraudulent behaviors.
 
-  <img src="amount_distribution_pie.png" alt="Piechart" width="300" height="300">
+  <img src="Visualizations/amount_distribution_pie.png" alt="Piechart" width="300" height="300">
 #### Correlation Insights
 
 
-  <img src="features_correlation.png" alt="Piechart" width="300" height="300">
+  <img src="Visualizations/features_correlation.png" alt="Piechart" width="300" height="300">
 
 ##### 1. **V1 to V28 Features**
 
@@ -109,10 +109,10 @@ To address this, we created a second chart using a balanced dataset where the nu
   - **Exceptions:** Time ranges between **21 and 28 hours** deviate from these general patterns, where the behavior of fraud and non-fraud cases varies significantly.
   - These conclusions are based on the balanced dataset and may not be observable directly visualizing  the chrt of  unbalanced dataset.
 
-### Visualization Example
+### Visualization 
 Below is the bar chart showing the **Number of Transactions by Hour and Class for the Balanced Dataset**:
 
-![Number of Transactions by Hour and Class](no_of_transaction_By_H_balanDataset_plot.png)
+![Number of Transactions by Hour and Class](Visualizations/no_of_transaction_By_H_balanDataset_plot.png)
 
 ### Conclusion
 
